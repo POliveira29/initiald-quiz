@@ -4,9 +4,7 @@ const Widget = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => {
-    return theme.colors.secondary;
-  }};
+  background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 4px;
   overflow: hidden;
   h1,
@@ -21,6 +19,11 @@ const Widget = styled.div`
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
+  }
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
   }
 `;
 
@@ -48,6 +51,27 @@ Widget.Content = styled.div`
   ul {
     list-style: none;
     padding: 0;
+  }
+`;
+
+Widget.Alternative = styled.a`
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.terciary};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+  input {
+    display: none;
   }
 `;
 

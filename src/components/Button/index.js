@@ -10,8 +10,8 @@ const Button = styled.button`
   font-weight: 600;
   letter-spacing: 1.25px;
   line-height: 16px;
-  background-color: ${({ theme }) => theme.colors.accent};
-  color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.contrastText};
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius};
   transition: 0.3s;
@@ -28,15 +28,15 @@ const Button = styled.button`
   }
 `;
 
-Button.propTypes = {
-  type: PropTypes.oneOf(["submit", "type", "button"]).isRequired,
-};
-
 Button.Wrapper = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
 `;
+
+Button.propTypes = {
+  type: PropTypes.oneOf(["submit", "type", "button"]).isRequired,
+};
 
 export default Button;

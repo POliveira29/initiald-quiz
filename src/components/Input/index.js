@@ -7,6 +7,7 @@ const Input = styled.input`
   height: 38px;
   padding: 0.6rem 0.8rem;
   background-color: transparent;
+  color: #fff;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   border-radius: ${({ theme }) => theme.borderRadius};
 `;

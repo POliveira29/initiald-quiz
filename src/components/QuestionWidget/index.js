@@ -1,6 +1,20 @@
 import Widget from "../Widget";
 import Button from "../Button";
 import AlternativeForm from "../../components/AlternativeForm";
+import BackLinkArrow from "../BackLinkArrow";
+import Message from "../QuizMessage";
+import MessageWrong from "../MessageWrong";
+import { Component } from "react";
+import { unmountComponentAtNode } from "react-dom";
+
+const ToggleBtnConfirm = () => {
+  if (document.getElementById("btnConfirm").click) {
+    setTimeout(() => {
+      document.getElementById("btnConfirm").style.display = "block";
+    }, 3 * 1000);
+    document.getElementById("btnConfirm").style.display = "none";
+  }
+};
 
 function QuestionWidget({
   question,
@@ -16,10 +30,11 @@ function QuestionWidget({
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
+  const [hidden, setHidden] = React.useState(true);
   return (
     <Widget>
       <Widget.Header>
-        {/* <BackLinkArrow href="/" /> */}
+        <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </Widget.Header>
       <img src={question.image} />
@@ -60,17 +75,22 @@ function QuestionWidget({
               </Widget.Alternative>
             );
           })}
-          <Button type="submit" disabled={!hasAlternativeSelected}>
+          <Button
+            onClick={ToggleBtnConfirm}
+            id="btnConfirm"
+            type="submit"
+            disabled={!hasAlternativeSelected}
+          >
             Confirmar
           </Button>
           {isFormSubmited && isCorrect && (
             <Button.Wrapper>
-              <img src="../../src/assets/btn-success.svg" alt="" />
+              <Message></Message>
             </Button.Wrapper>
           )}
           {isFormSubmited && !isCorrect && (
             <Button.Wrapper>
-              <img src="../../src/assets/btn-wrong.svg" alt="" />
+              <MessageWrong></MessageWrong>
             </Button.Wrapper>
           )}
         </AlternativeForm>

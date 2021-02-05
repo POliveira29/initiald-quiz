@@ -1,33 +1,29 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 function Logo({ className }) {
   return (
     <svg
       className={className}
+      version="1.1"
+      id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 124.12 62.13"
+      x="0px"
+      y="0px"
+      viewBox="0 0 350 94"
     >
-      <defs />
-      <title>Asset 6</title>
-      <g id="Layer_2" data-name="Layer 2">
-        <g id="Layer_1-2" data-name="Layer 1">
-          <text
-            className="cls-1"
-            transform="matrix(0.94, -0.32, 0.31, 0.95, 70.26, 54.14)"
-          >
-            Quiz
-          </text>
-          <text
-            className="cls-2"
-            transform="translate(0.13 27.02) scale(0.99 1)"
-          >
-            INITIAL D
-          </text>
-        </g>
-      </g>
+      <style type="text/css"></style>
+      <text transform="matrix(1 0 0 1 41.3335 61.3018)" class="st0 st1 st2">
+        INITIAL D
+      </text>
+      <text
+        transform="matrix(0.8325 -0.5541 0.5541 0.8325 259.2495 90.6722)"
+        class="st3 st4 st5"
+      >
+        Quiz
+      </text>
     </svg>
   );
 }
@@ -37,18 +33,25 @@ Logo.propTypes = {
 };
 
 const QuizLogo = styled(Logo)`
-  .cls-1 {
-    font-size: 30.01px;
+  .st0 {
+    fill: #ffffff;
+    stroke: #000000;
+    stroke-miterlimit: 10;
+  }
+  .st1 {
+    font-family: Impact, Impact;
+  }
+  .st2 {
+    font-size: 67.0708px;
+  }
+  .st3 {
     fill: #df0009;
+  }
+  .st4 {
     font-family: BrushScriptStd, Brush Script Std;
   }
-  .cls-2 {
-    font-size: 30.04px;
-    fill: #fff;
-    stroke: #000;
-    stroke-miterlimit: 10;
-    stroke-width: 0.25px;
-    font-family: Impact, Impact;
+  .st5 {
+    font-size: 28.6268px;
   }
   margin: auto;
   display: block;

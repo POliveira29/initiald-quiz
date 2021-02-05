@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Widget = styled.div`
-  margin-top: 24px;
+  margin-top: 6px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.mainBg};
@@ -54,6 +54,15 @@ Widget.Content = styled.div`
   }
   span {
     color: #ccc;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 1rem;
+    color: #000;
+    background-color: ${({ theme }) => theme.colors.secondary};
+    border-radius: ${({ theme }) => theme.borderRadius};
   }
 `;
 

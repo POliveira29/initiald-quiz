@@ -25,13 +25,11 @@ function ResultWidget({ name, results }) {
   const resultMessage = () => {
     let mensagemResultado = "";
     if (resultadoFinal <= 200) {
-      mensagemResultado =
-        '"O importante é continuar tentando".\n\n  Keiichi Tsuchiya';
+      mensagemResultado = "O importante é continuar tentando!";
     } else if (resultadoFinal >= 300 && resultadoFinal <= 400) {
-      mensagemResultado =
-        '"Se você não estiver continuamente olhando para cima e se esforçando, não poderá alcançar o próximo nível". \n\n Toshiya Joushima';
+      mensagemResultado = "Você esta quase lá!";
     } else {
-      mensagemResultado = "Você é um racer driver";
+      mensagemResultado = "Você é um mestre!";
     }
     return mensagemResultado;
   };
@@ -40,13 +38,12 @@ function ResultWidget({ name, results }) {
   const resultGif = () => {
     let resultadoGif;
     if (resultadoFinal <= 200) {
-      resultadoGif =
-        "https://tenor.com/view/ju-driving-initial-d-anime-gif-11291646.gif";
+      resultadoGif = "https://media.giphy.com/media/yj5oYHjoIwv28/giphy.gif";
     } else if (resultadoFinal >= 300 && resultadoFinal <= 400) {
-      resultadoGif = "https://tenor.com/view/initial-d-ae86-gif-19459749.gif";
+      resultadoGif = "https://media.giphy.com/media/JQQwgVUMDIyAM/giphy.gif";
     } else {
       resultadoGif =
-        "https://media.tenor.com/images/b2202d792f37bbe9f6397b60e93ca66d/tenor.gif";
+        "https://media.giphy.com/media/xT8qBepJQzUjXpeWU8/giphy.gif";
     }
     return resultadoGif;
   };

@@ -4,8 +4,6 @@ import AlternativeForm from "../../components/AlternativeForm";
 import BackLinkArrow from "../BackLinkArrow";
 import MessageSuccess from "../MessageSuccess";
 import MessageWrong from "../MessageWrong";
-import InfoAnswer from "../InfoAnswer";
-import db from "../../../db.json";
 
 const ToggleBtnConfirm = () => {
   if (document.getElementById("btnConfirm").click) {
@@ -38,38 +36,6 @@ function QuestionWidget({
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
-  const infoGif = () => {
-    let infoHeader;
-    if (questionIndex === 0) {
-      infoHeader = db.questions[0].infoGif;
-    } else if (questionIndex === 1) {
-      infoHeader = db.questions[1].infoGif;
-    } else if (questionIndex === 2) {
-      infoHeader = db.questions[2].infoGif;
-    } else if (questionIndex === 3) {
-      infoHeader = db.questions[3].infoGif;
-    } else if (questionIndex === 4) {
-      infoHeader = db.questions[4].infoGif;
-    }
-    return infoHeader;
-  };
-  const gif = infoGif();
-  const infoAnswer = () => {
-    let information;
-    if (questionIndex === 0) {
-      information = db.questions[0].information;
-    } else if (questionIndex === 1) {
-      information = db.questions[1].information;
-    } else if (questionIndex === 2) {
-      information = db.questions[2].information;
-    } else if (questionIndex === 3) {
-      information = db.questions[3].information;
-    } else if (questionIndex === 4) {
-      information = db.questions[4].information;
-    }
-    return information;
-  };
-  const info = infoAnswer();
   return (
     <Widget>
       <Widget.Header>
@@ -125,25 +91,11 @@ function QuestionWidget({
           {isFormSubmited && isCorrect && (
             <Button.Wrapper>
               <MessageSuccess></MessageSuccess>
-              <InfoAnswer>
-                <InfoAnswer.Header>
-                  <h3>Resposta Correta!</h3>
-                </InfoAnswer.Header>
-                <img src={gif} alt="" />
-                <p>{info}</p>
-              </InfoAnswer>
             </Button.Wrapper>
           )}
           {isFormSubmited && !isCorrect && (
             <Button.Wrapper>
               <MessageWrong></MessageWrong>
-              <InfoAnswer>
-                <InfoAnswer.Header>
-                  <h3>Resposta Errada!</h3>
-                </InfoAnswer.Header>
-                <img src={gif} alt="" />
-                <p>{info}</p>
-              </InfoAnswer>
             </Button.Wrapper>
           )}
         </AlternativeForm>

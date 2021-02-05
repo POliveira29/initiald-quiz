@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-//import db from "../../../db.json";
 import QuizContainer from "../../components/QuizContainer";
-import QuizLogo from "../..//components/QuizLogo";
 import QuizBackground from "../..//components/QuizBackground";
 import LoadingWidget from "../../components/LoadingWidget";
-import QuestionWidget from "../../components/QuestionWidget";
-import RestultWidget from "../../components/ResultWidget";
+import QuestionWidgetExternal from "../../components/QuestionWidgetExternal";
+import RestultWidgetExternal from "../../components/ResultWidgetExternal";
 
 const screenStates = {
   QUIZ: "QUIZ",
@@ -50,7 +48,7 @@ export default function Quiz({ externalQuestions, externalBg }) {
     <QuizBackground backgroundImage={bg}>
       <QuizContainer>
         {screenState === screenStates.QUIZ && (
-          <QuestionWidget
+          <QuestionWidgetExternal
             question={question}
             questionIndex={questionIndex}
             totalQuestions={totalQuestions}
@@ -62,7 +60,7 @@ export default function Quiz({ externalQuestions, externalBg }) {
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
         {screenState === screenStates.RESULT && (
-          <RestultWidget results={results} />
+          <RestultWidgetExternal results={results} />
         )}
       </QuizContainer>
     </QuizBackground>

@@ -24,14 +24,13 @@ function ResultWidget({ name, results }) {
   // Função que retorna uma mensagem (String) dependendo da pontuação que a pessoa fez.
   const resultMessage = () => {
     let mensagemResultado = "";
-    if (resultadoFinal <= 200) {
+    if (resultadoFinal <= 300) {
+      mensagemResultado = "Acho que esta na hora de resgatar essa nostalgia.";
+    } else if (resultadoFinal >= 400 && resultadoFinal <= 700) {
       mensagemResultado =
-        '"O importante é continuar tentando".\n\n  Keiichi Tsuchiya';
-    } else if (resultadoFinal >= 300 && resultadoFinal <= 400) {
-      mensagemResultado =
-        '"Se você não estiver continuamente olhando para cima e se esforçando, não poderá alcançar o próximo nível". \n\n Toshiya Joushima';
+        "Até que você lembra da sua infância, mas ainda falta algo.";
     } else {
-      mensagemResultado = "Você é um racer driver";
+      mensagemResultado = "É pelo visto você está bem velho hein... Parabéns";
     }
     return mensagemResultado;
   };
@@ -40,8 +39,7 @@ function ResultWidget({ name, results }) {
   const resultGif = () => {
     let resultadoGif;
     if (resultadoFinal <= 200) {
-      resultadoGif =
-        "https://tenor.com/view/ju-driving-initial-d-anime-gif-11291646.gif";
+      resultadoGif = "https://media.giphy.com/media/xgeyRJzCYowoM/giphy.gif";
     } else if (resultadoFinal >= 300 && resultadoFinal <= 400) {
       resultadoGif = "https://tenor.com/view/initial-d-ae86-gif-19459749.gif";
     } else {

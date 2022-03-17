@@ -32,7 +32,7 @@ export default function Quiz() {
     // fetch() ...
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 3 * 1000);
     // nasce === didMount
   }, []);
 

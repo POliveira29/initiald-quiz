@@ -4,19 +4,19 @@ const InfoAnswer = styled.div`
   position: absolute;
   width: 50%;
   max-height: 600px;
-  top: 8.1rem;
+  top: 6.4rem;
   background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: ${({ theme }) => theme.borderRadius};
   img {
     width: 100%;
-    height: auto;
+    height: 300px;
     object-fit: cover;
   }
   p {
     padding: 1rem;
     font-size: 18px;
     text-align: justify;
-    color: #000;
+    color: ${({ theme }) => theme.colors.contrastText};
   }
   @media screen and (max-width: 500px) {
     display: none;
@@ -24,10 +24,16 @@ const InfoAnswer = styled.div`
   @media screen and (min-width: 768px) {
     width: 38%;
     right: 2rem;
+    img {
+      height: 150px;
+    }
   }
   @media screen and (min-width: 1024px) {
     width: 50%;
     right: 2rem;
+    img {
+      height: 330px;
+    }
   }
   @media screen and (min-width: 1440px) {
     width: 50%;

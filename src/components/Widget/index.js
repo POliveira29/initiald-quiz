@@ -53,14 +53,14 @@ Widget.Content = styled.div`
     padding: 0;
   }
   span {
-    color: #ccc;
+    color: ${({ theme }) => theme.colors.contrastText};
   }
   a {
     display: flex;
     justify-content: center;
     text-decoration: none;
     padding: 1rem;
-    color: #000;
+    color: #fff;
     background-color: ${({ theme }) => theme.colors.secondary};
     border-radius: ${({ theme }) => theme.borderRadius};
   }

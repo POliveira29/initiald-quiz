@@ -7,7 +7,7 @@ const Loading = styled.div`
   background-size: 100vw 100vh;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("https://i.giphy.com/media/SWwMlmElqy3sY/giphy.webp");
+  background-image: url("https://media.giphy.com/media/TvLuZ00OIADoQ/giphy.gif");
 `;
 
 function LoadingWidget() {

@@ -8,8 +8,11 @@ const Input = styled.input`
   padding: 0.6rem 0.8rem;
   background-color: transparent;
   color: #fff;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${({ theme }) => theme.colors.contrastText};
   border-radius: ${({ theme }) => theme.borderRadius};
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.contrastText};
+  }
 `;
 export default function InputBase({ type, onChange, placeholder, ...props }) {
   return (

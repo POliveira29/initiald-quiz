@@ -22,6 +22,7 @@ export default function Home() {
       <Head>
         <title>Initial D - Quiz</title>
         <meta property="og:image" content={db.bg} />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
       </Head>
       <QuizContainer>
         <QuizLogo />

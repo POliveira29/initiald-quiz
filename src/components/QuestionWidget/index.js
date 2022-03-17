@@ -4,6 +4,7 @@ import AlternativeForm from "../../components/AlternativeForm";
 import BackLinkArrow from "../BackLinkArrow";
 import MessageSuccess from "../MessageSuccess";
 import MessageWrong from "../MessageWrong";
+import { motion } from "framer-motion";
 import InfoAnswer from "../InfoAnswer";
 import db from "../../../db.json";
 
@@ -11,7 +12,7 @@ const ToggleBtnConfirm = () => {
   if (document.getElementById("btnConfirm").click) {
     setTimeout(() => {
       document.getElementById("btnConfirm").style.display = "block";
-    }, 3 * 1000);
+    }, 15 * 1000);
     document.getElementById("btnConfirm").style.display = "none";
   }
 };
@@ -50,6 +51,16 @@ function QuestionWidget({
       infoHeader = db.questions[3].infoGif;
     } else if (questionIndex === 4) {
       infoHeader = db.questions[4].infoGif;
+    } else if (questionIndex === 5) {
+      infoHeader = db.questions[5].infoGif;
+    } else if (questionIndex === 6) {
+      infoHeader = db.questions[6].infoGif;
+    } else if (questionIndex === 7) {
+      infoHeader = db.questions[7].infoGif;
+    } else if (questionIndex === 8) {
+      infoHeader = db.questions[8].infoGif;
+    } else if (questionIndex === 9) {
+      infoHeader = db.questions[9].infoGif;
     }
     return infoHeader;
   };
@@ -66,12 +77,31 @@ function QuestionWidget({
       information = db.questions[3].information;
     } else if (questionIndex === 4) {
       information = db.questions[4].information;
+    } else if (questionIndex === 5) {
+      information = db.questions[5].information;
+    } else if (questionIndex === 6) {
+      information = db.questions[6].information;
+    } else if (questionIndex === 7) {
+      information = db.questions[7].information;
+    } else if (questionIndex === 8) {
+      information = db.questions[8].information;
+    } else if (questionIndex === 9) {
+      information = db.questions[9].information;
     }
     return information;
   };
   const info = infoAnswer();
   return (
-    <Widget>
+    <Widget
+      as={motion.div}
+      transition={{ ease: "easeIn", duration: 0.5 }}
+      variants={{
+        show: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 300 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
         <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
@@ -89,7 +119,7 @@ function QuestionWidget({
               onSubmit();
               setIsFromSubmited(false);
               setSelectedAlternative(undefined);
-            }, 3 * 1000);
+            }, 15 * 1000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
@@ -124,7 +154,18 @@ function QuestionWidget({
           </Button>
           {isFormSubmited && isCorrect && (
             <Button.Wrapper>
-              <MessageSuccess></MessageSuccess>
+              <Button.Wrapper
+                as={motion.div}
+                initial={{ scale: 0 }}
+                animate={{ rotate: 360, scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                }}
+              >
+                <MessageSuccess />
+              </Button.Wrapper>
               <InfoAnswer>
                 <InfoAnswer.Header>
                   <h3>Resposta Correta!</h3>
@@ -136,7 +177,18 @@ function QuestionWidget({
           )}
           {isFormSubmited && !isCorrect && (
             <Button.Wrapper>
-              <MessageWrong></MessageWrong>
+              <Button.Wrapper
+                as={motion.div}
+                initial={{ scale: 0 }}
+                animate={{ rotate: 360, scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                }}
+              >
+                <MessageWrong></MessageWrong>
+              </Button.Wrapper>
               <InfoAnswer>
                 <InfoAnswer.Header>
                   <h3>Resposta Errada!</h3>
